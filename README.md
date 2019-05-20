@@ -21,6 +21,20 @@ seulement la 1ére fonctionalité, pas de grosse difficulté, juste du copier/co
 # Diagramme de classes :
 ![alt text](https://github.com/JulianDesmartin/spaceinvaders/blob/master/image/Capture%20du%202019-05-14%2015-53-03.png)
 # nuage de mots :
-j'y arrive pas
+![alt text](https://github.com/JulianDesmartin/spaceinvaders/blob/master/image/spaceinvaders.png)
 
 ---
+
+Rapport hebdomadaire
+# semaine du 14/05/2019  au 21/05/2019
+# description du travail effectué :
+
+Etape n°1 : Positionner un nouveau vaisseau avec une dimension donnée
+1. Supprimer la surcharge inutile des méthodes positionnerUnNouveauVaisseau
+2. Remanier le code positionnerUnNouveauVaisseau pour mieux identifier les responsabilités
+  1. Constructeurs
+  
+
+# Diagramme de classes :
+
+# nuage de mots :
