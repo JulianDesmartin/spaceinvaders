@@ -29,11 +29,16 @@ Rapport hebdomadaire
 # semaine du 14/05/2019  au 21/05/2019
 # description du travail effectué :
 
+travail réaliser :
 Etape n°1 : Positionner un nouveau vaisseau avec une dimension donnée
 1. Supprimer la surcharge inutile des méthodes positionnerUnNouveauVaisseau
 2. Remanier le code positionnerUnNouveauVaisseau pour mieux identifier les responsabilités
   1. Constructeurs
-  
+  2. Méthode occupeLaPosition
+Etape n°2 : Faire en sorte qu'il soit impossible de positionner un nouveau vaisseau qui déborde de l'espace de jeu
+1. Une méthode de test bien nommée
+2. Une recherche préalable des exemples à tester
+
 
 # Diagramme de classes :
 
