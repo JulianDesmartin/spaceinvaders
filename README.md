@@ -40,5 +40,6 @@ Etape n°2 : Faire en sorte qu'il soit impossible de positionner un nouveau vais
 
 
 # Diagramme de classes :
-
+![alt text](https://github.com/JulianDesmartin/spaceinvaders/blob/master/image/Capture2.PNG)
 # nuage de mots :
+![alt text](https://github.com/JulianDesmartin/spaceinvaders/blob/master/image/spaceinvaders2.png)
