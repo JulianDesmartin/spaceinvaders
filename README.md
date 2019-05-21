@@ -1,9 +1,10 @@
 # spaceinvaders
+
 Bonjour 
-...
-!
+Rapport hebdomadaire :
+
 ---
-Rapport hebdomadaire
+
 # semaine du 29/04/2019  au 03/05/2019
 # description du travail effectué :
 rien...
@@ -14,7 +15,6 @@ aucun
 
 ---
 
-Rapport hebdomadaire
 # semaine du 06/05/2019  au 14/05/2019
 # description du travail effectué :
 seulement la 1ére fonctionalité, pas de grosse difficulté, juste du copier/coller
@@ -25,7 +25,6 @@ seulement la 1ére fonctionalité, pas de grosse difficulté, juste du copier/co
 
 ---
 
-Rapport hebdomadaire
 # semaine du 14/05/2019  au 21/05/2019
 # description du travail effectué :
 
