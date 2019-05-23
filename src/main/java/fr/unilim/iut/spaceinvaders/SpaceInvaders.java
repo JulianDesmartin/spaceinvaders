@@ -1,10 +1,9 @@
 package fr.unilim.iut.spaceinvaders;
 
 import fr.unilim.iut.spaceinvaders.utils.*;
+import fr.unilim.iut.spaceinvaders.moteurjeu.*;
 
-public class SpaceInvaders {
-	private static final char MARQUE_VIDE = '.';
-	private static final char MARQUE_VAISSEAU = 'V';
+public class SpaceInvaders implements Jeu{
 	int longueur;
 	int hauteur;
 	Vaisseau vaisseau;
@@ -28,9 +27,9 @@ public class SpaceInvaders {
 	private char recupererMarqueDeLaPosition(int x, int y) {
 		char marque;
 		if (this.aUnVaisseauQuiOccupeLaPosition(x, y))
-			marque = MARQUE_VAISSEAU;
+			marque = Constante.MARQUE_VAISSEAU;
 		else
-			marque = MARQUE_VIDE;
+			marque = Constante.MARQUE_VIDE;
 		return marque;
 	}
 
@@ -38,7 +37,7 @@ public class SpaceInvaders {
 		return this.aUnVaisseau() && vaisseau.occupeLaPosition(x, y);
 	}
 
-	private boolean aUnVaisseau() {
+	public boolean aUnVaisseau() {
 		return vaisseau != null;
 	}
 
@@ -76,4 +75,33 @@ public class SpaceInvaders {
 		vaisseau.positionner(x, y);
 	}
 
+    public void initialiserJeu() {
+	    Position positionVaisseau = new Position(this.longueur/2,this.hauteur-1);
+	    Dimension dimensionVaisseau = new Dimension(Constante.VAISSEAU_LONGUEUR, Constante.VAISSEAU_HAUTEUR);
+	    positionnerUnNouveauVaisseau(dimensionVaisseau, positionVaisseau);
+    }
+    
+    @Override
+    public void evoluer(Commande commandeUser) {
+		
+       if (commandeUser.gauche) {
+           deplacerVaisseauVersLaGauche();
+       }
+		
+      if (commandeUser.droite) {
+	        deplacerVaisseauVersLaDroite();
+      }
+
+    }
+    
+    @Override
+    public boolean etreFini() {
+       return false; 
+    }
+    
+	public Vaisseau recupererVaisseau() {
+		return this.vaisseau;
+	}
+    
+    
 }
