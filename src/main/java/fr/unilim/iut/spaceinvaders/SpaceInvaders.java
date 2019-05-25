@@ -57,7 +57,7 @@ public class SpaceInvaders implements Jeu{
 
 	public void deplacerVaisseauVersLaDroite() {
 		if (vaisseau.abscisseLaPlusADroite() < (longueur - 1)) {
-			vaisseau.seDeplacerVersLaDroite();
+			vaisseau.deplacerHorizontalementVers(Direction.DROITE);
 			if (!estDansEspaceJeu(vaisseau.abscisseLaPlusADroite(), vaisseau.ordonneeLaPlusHaute())) {
 				vaisseau.positionner(longueur - vaisseau.longueur(), vaisseau.ordonneeLaPlusHaute());
 			}
@@ -66,7 +66,7 @@ public class SpaceInvaders implements Jeu{
 
 	public void deplacerVaisseauVersLaGauche() {
 		if (0 < vaisseau.abscisseLaPlusAGauche())
-			vaisseau.seDeplacerVersLaGauche();
+			vaisseau.deplacerHorizontalementVers(Direction.GAUCHE);
 		if (!estDansEspaceJeu(vaisseau.abscisseLaPlusAGauche(), vaisseau.ordonneeLaPlusHaute())) {
 			vaisseau.positionner(0, vaisseau.ordonneeLaPlusHaute());
 		}
@@ -97,21 +97,27 @@ public class SpaceInvaders implements Jeu{
 	    positionnerUnNouveauVaisseau(dimensionVaisseau, positionVaisseau, Constante.VAISSEAU_VITESSE);
     }
     
-    @Override
-    public void evoluer(Commande commandeUser) {
-		
-       if (commandeUser.gauche) {
-           deplacerVaisseauVersLaGauche();
-       }
-		
-      if (commandeUser.droite) {
-	        deplacerVaisseauVersLaDroite();
-      }
-      
-      if (commandeUser.tir && !this.aUnMissile())
-          tirerUnMissile(new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR),
+	@Override
+	public void evoluer(Commande commandeUser) {
+
+		if (commandeUser.gauche) {
+			deplacerVaisseauVersLaGauche();
+		}
+
+		if (commandeUser.droite) {
+			deplacerVaisseauVersLaDroite();
+		}
+
+		if (commandeUser.tir && !this.aUnMissile()) {
+			tirerUnMissile(new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR),
 					Constante.MISSILE_VITESSE);
-    }
+		}
+		
+		if (this.aUnMissile()) {
+			this.deplacerMissile();
+		}
+		
+	}
     
     @Override
     public boolean etreFini() {
@@ -133,6 +139,15 @@ public class SpaceInvaders implements Jeu{
 							
 		   this.missile = this.vaisseau.tirerUnMissile(dimensionMissile,vitesseMissile);
      }
+
+	public void deplacerMissile() {
+		if (this.aUnMissile()) {
+			this.missile.deplacerVerticalementVers(Direction.HAUT_ECRAN);
+			if (!estDansEspaceJeu(this.missile.abscisseLaPlusAGauche(),missile.ordonneeLaPlusBasse())) {
+				this.missile = null;
+			}
+		}
+	}
     
     
 }
