@@ -43,3 +43,23 @@ Etape n°2 : Faire en sorte qu'il soit impossible de positionner un nouveau vais
 ![alt text](https://github.com/JulianDesmartin/spaceinvaders/blob/master/image/Capture2.PNG)
 # nuage de mots :
 ![alt text](https://github.com/JulianDesmartin/spaceinvaders/blob/master/image/spaceinvaders2.png)
+
+---
+
+# semaine du 21/05/2019  au 30/05/2019
+# description du travail effectué :
+
+Fonctionnalité n°3 : Choisir la vitesse du vaisseau
+Fonctionnalité n°4 : Tirer un missile depuis le vaisseau
+Fonctionnalité n°5 : Ajouter un envahisseur dans le jeu
+Fonctionnalité n°6 : Détecter une collision entre deux sprites
+Fonctionnalité n°7 : Terminer la partie
++
+mise en place d'un moteur graphique au sein de notre jeu
+
+# Diagramme de classes :
+![alt text](https://github.com/JulianDesmartin/spaceinvaders/blob/master/image/Capture3.PNG)
+# nuage de mots :
+![alt text](https://github.com/JulianDesmartin/spaceinvaders/blob/master/image/spaceinvaders3.png)
+
+---
