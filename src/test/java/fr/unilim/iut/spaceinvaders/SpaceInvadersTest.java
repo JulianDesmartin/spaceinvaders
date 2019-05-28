@@ -2,12 +2,18 @@ package fr.unilim.iut.spaceinvaders;
 
 import org.junit.Before;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
+import fr.unilim.iut.spaceinvaders.model.Collision;
 import fr.unilim.iut.spaceinvaders.model.Dimension;
 import fr.unilim.iut.spaceinvaders.model.Direction;
+import fr.unilim.iut.spaceinvaders.model.Envahisseur;
+import fr.unilim.iut.spaceinvaders.model.Missile;
 import fr.unilim.iut.spaceinvaders.model.Position;
 import fr.unilim.iut.spaceinvaders.model.SpaceInvaders;
+import fr.unilim.iut.spaceinvaders.moteurjeu.Commande;
 import fr.unilim.iut.spaceinvaders.utils.DebordementEspaceJeuException;
 import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 import fr.unilim.iut.spaceinvaders.utils.MissileException;
@@ -389,6 +395,7 @@ public class SpaceInvadersTest {
 				
 		}
 	    
+	    @Test
 	    public void test_EnvahisseurAvance_DeplacerEnvahisseurVersLaDroite() {
 
 	        spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(7,2),new Position(5,2),1);
@@ -424,6 +431,8 @@ public class SpaceInvadersTest {
 	       "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	    }
 	    
+	    /*
+	    @Test
 	    public void test_EnvahisseurAvance_DeplacerEnvahisseurVersLaGauche() {
 
 	        spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(7,2),new Position(5,2),1);
@@ -440,13 +449,13 @@ public class SpaceInvadersTest {
 	        "...............\n" + 
 	        "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	    }
-
+		*/
 	    
-	    /* marche pas, alors que le programme fonctione ??!
 	    @Test
 	    public void test_EnvahisseurAvance_LimiteGaucheAteinte_ChangeDeDirectionVersLaDroite() {
 
 	       spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(7,2),new Position(0,2), 1);
+	       spaceinvaders.deplacerEnvahisseurEnFonctionDeSaDirection();
 	       spaceinvaders.deplacerEnvahisseurEnFonctionDeSaDirection();
 	       assertEquals("" + 
 	       "...............\n" + 
@@ -459,5 +468,23 @@ public class SpaceInvadersTest {
 	       "...............\n" + 
 	       "...............\n" + 
 	       "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
-	    } */
+	    }
+	    
+	    @Test
+	    public void test_PlusDEnvahisseur_PartieTerminer() {
+	    	
+	    	spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(7, 2), new Position(5, 2),1);
+	    	spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7,2),new Position(5,9), 1);
+	    	spaceinvaders.tirerUnMissile(new Dimension(3,2),1);
+	    	
+			spaceinvaders.deplacerMissile();
+			spaceinvaders.deplacerMissile();
+			spaceinvaders.deplacerMissile();
+			spaceinvaders.deplacerMissile();
+
+			assertTrue(spaceinvaders.etatPartie);
+			assertTrue(spaceinvaders.etreFini());
+	    }
+	    
+	    
 }

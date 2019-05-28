@@ -19,29 +19,6 @@ public class Collision {
 		return false;
 	}
 
-	/*
-	private static boolean onLaMemeOrdonne(Sprite premierSprite, Sprite deuxiemeSprite) {
-
-		int OrdonneLaPlusHautePremierSprite = premierSprite.ordonneeLaPlusHaute();
-		int OrdonneLaPlusBassePremierSprite = premierSprite.ordonneeLaPlusBasse();
-		int OrdonneLaPlusHauteDeuxiemeSprite = deuxiemeSprite.ordonneeLaPlusHaute();
-		int OrdonneLaPlusBasseDeuxiemeSprite = deuxiemeSprite.ordonneeLaPlusBasse();
-
-		return (OrdonneLaPlusHautePremierSprite >= OrdonneLaPlusHauteDeuxiemeSprite)
-				&& (OrdonneLaPlusBassePremierSprite <= OrdonneLaPlusHauteDeuxiemeSprite);
-	}
-
-	private static boolean onLaMemeAbscisse(Sprite premierSprite, Sprite deuxiemeSprite) {
-		int AbscisseLaPlusADroitePremierSprite = premierSprite.abscisseLaPlusADroite();
-		int AbscisseLaPlusAGauchePremierSprite = premierSprite.abscisseLaPlusAGauche();
-		int AbscisseLaPlusADroiteDeuxiemeSprite = deuxiemeSprite.abscisseLaPlusADroite();
-		int AbscisseLaPlusAGaucheDeuxiemeSprite = deuxiemeSprite.abscisseLaPlusAGauche();
-
-		return (AbscisseLaPlusAGauchePremierSprite <= AbscisseLaPlusAGaucheDeuxiemeSprite)
-				&& (AbscisseLaPlusADroiteDeuxiemeSprite <= AbscisseLaPlusADroitePremierSprite);
-	}
-	
-	*/
 	
 	private static boolean collisionMissileHautDroit(Sprite premierSprite, Sprite deuxiemeSprite) {
 		
@@ -114,24 +91,5 @@ public class Collision {
 		}
 		return false;
 	}
-	
-	/*
-	colision coin haut droit
-	absciceGaucheE < absicedroiteM < absiceDroiteE
-	ordonneBasseE <  ordonneHauteM <ordonneHauteE
-	
-	colision coin haut gauche
-	absciceGaucheE < absiceGaucheM < absiceDroiteE
-	ordonneBasseE <  ordonneHauteM <ordonneHauteE
 
-	colision coin bas droit
-	absciceGaucheE < absicedroiteM < absiceDroiteE
-	ordonneBasseE <  ordonneBasseM <ordonneHauteE
-	
-	colision coin bas gauche
-	absciceGaucheE < absiceGaucheM < absiceDroiteE
-	ordonneBasseE <  ordonneBasseM <ordonneHauteE
-	
-
-*/
 }

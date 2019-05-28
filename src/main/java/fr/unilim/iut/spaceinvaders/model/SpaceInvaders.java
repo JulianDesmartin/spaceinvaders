@@ -10,7 +10,7 @@ public class SpaceInvaders implements Jeu{
 	Missile missile;
 	Envahisseur envahisseur;
 	Direction directionEnvahisseurDeBase = Direction.DROITE;
-	boolean etatPartie = false;
+	public boolean etatPartie = false;
 
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
@@ -130,6 +130,9 @@ public class SpaceInvaders implements Jeu{
 			this.missile.deplacerVerticalementVers(Direction.HAUT_ECRAN);
 			if (!estDansEspaceJeu(this.missile.abscisseLaPlusAGauche(),missile.ordonneeLaPlusBasse())) {
 				this.missile = null;
+			}
+			if (this.aUnMissile() && this.aUnEnvahisseur() && Collision.detecterCollision(envahisseur, this.missile)) {
+				terminerJeux();
 			}
 		}
 	}
@@ -267,13 +270,12 @@ public class SpaceInvaders implements Jeu{
 			deplacerEnvahisseurEnFonctionDeSaDirection();
 		}
 		
-		if (this.aUnMissile() && this.aUnEnvahisseur() && Collision.detecterCollision(this.recupererEnvahisseur(),this.recupererMissile())) {
-			this.envahisseur = null;
-			this.missile = null;
-			this.etatPartie = true;
-		}
-		
-		
+	}
+
+	public void terminerJeux() {
+		this.envahisseur = null;
+		this.missile = null;
+		this.etatPartie = true;
 	}
 	
 

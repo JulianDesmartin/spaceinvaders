@@ -1,10 +1,13 @@
 package fr.unilim.iut.spaceinvaders.model;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.util.List;
 
 import fr.unilim.iut.spaceinvaders.moteurjeu.DessinJeu;
+
 
 public class DessinSpaceInvaders implements DessinJeu {
 	
@@ -23,11 +26,16 @@ public class DessinSpaceInvaders implements DessinJeu {
 	   }
 	   if (this.jeu.aUnMissile()) {
 		   Missile missile = this.jeu.recupererMissile();
-		   this.dessinerUnMissile(missile, im);
+			   this.dessinerUnMissile(missile, im);
+		   
 	   }
 	   if (this.jeu.aUnEnvahisseur()) {
 		   Envahisseur envahisseur = this.jeu.recupererEnvahisseur();
 		   this.dessinerUnEnvahisseur(envahisseur, im);
+	   }
+	   
+	   if (this.jeu.etreFini()) {
+		   this.dessinerPartieFinie(im);
 	   }
    }
 
@@ -54,5 +62,13 @@ public class DessinSpaceInvaders implements DessinJeu {
 	   crayon.fillRect(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusBasse(), envahisseur.longueur(), envahisseur.hauteur());
 
    }
+   
+	private void dessinerPartieFinie( BufferedImage image) {
+		Graphics2D crayon = (Graphics2D) image.getGraphics();
+		crayon.setColor(Color.GRAY);
+		crayon.setFont(new Font("TimesRoman", Font.BOLD, 30));
+		crayon.drawString("Partie terminer :/", 40 , 100);
+		
+	}
    
 }
