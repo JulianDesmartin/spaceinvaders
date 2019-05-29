@@ -16,10 +16,10 @@ public class Envahisseur extends Sprite {
 	
 	public void ChangerDeSensDeDeplacement() {
 		if (this.sensDeDeplacement.equals(Direction.DROITE)) {
-			sensDeDeplacement = Direction.GAUCHE;
+			this.sensDeDeplacement = Direction.GAUCHE;
 		}
 		else if (this.sensDeDeplacement.equals(Direction.GAUCHE)){
-			sensDeDeplacement = Direction.DROITE;
+			this.sensDeDeplacement = Direction.DROITE;
 		}
 	}
 

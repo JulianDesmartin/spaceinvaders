@@ -2,8 +2,8 @@ package fr.unilim.iut.spaceinvaders.model;
 
 public class Constante {
 
-    public static final int ESPACEJEU_LONGUEUR = 300;
-    public static final int ESPACEJEU_HAUTEUR = 200;
+    public static final int ESPACEJEU_LONGUEUR = 500;
+    public static final int ESPACEJEU_HAUTEUR = 600;
 
     public static final int VAISSEAU_LONGUEUR = 30;
     public static final int VAISSEAU_HAUTEUR = 20;
@@ -16,9 +16,9 @@ public class Constante {
 
     public static final int MISSILE_LONGUEUR = 10;
     public static final int MISSILE_HAUTEUR = 20;
-    public static final int MISSILE_VITESSE = 20;
+    public static final int MISSILE_VITESSE = 70;
     
-    public static final int ENVAHISSEUR_LONGUEUR = 30;
+    public static final int ENVAHISSEUR_LONGUEUR = 40;
     public static final int ENVAHISSEUR_HAUTEUR = 20;
-    public static final int ENVAHISSEUR_VITESSE = 5; 
+    public static final int ENVAHISSEUR_VITESSE = 1; 
 }
